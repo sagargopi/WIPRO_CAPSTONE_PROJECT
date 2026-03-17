@@ -125,3 +125,5 @@ From any of `backend/eureka/`, `backend/User/`, `backend/Owner/`:
 
 - Eureka client configuration is in the backend services’ [application.properties](file:///c:/Users/Lenovo/Downloads/WIPRO_CAPSTONE_PROJECT/backend/User/src/main/resources/application.properties#L17-L21) and [application.properties](file:///c:/Users/Lenovo/Downloads/WIPRO_CAPSTONE_PROJECT/backend/Owner/src/main/resources/application.properties#L17-L21).
 - If you change ports, also update the frontend base URLs in [api.js](file:///c:/Users/Lenovo/Downloads/WIPRO_CAPSTONE_PROJECT/myFin-Bank/src/services/api.js#L1-L9).
+
+
