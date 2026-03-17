@@ -1,0 +1,164 @@
+/* --- Navbar Container --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; /* Refined padding for a sleeker look */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky; /* Keeps navbar at the top while scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+/* --- Brand Logo (Text Only) --- */
+.navbar-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: default;
+  user-select: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* --- Navigation Links Grid --- */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  background: #ffffff;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #5568d3;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: #ffffff;
+}
+
+.nav-link.active:hover {
+  background: #5568d3;
+  border-color: #5568d3;
+  color: #ffffff;
+}
+
+/* --- Notification Badge Styling --- */
+.notifications-link {
+  position: relative;
+}
+
+.unread-badge {
+  background-color: #ff4757; /* Vibrant Notification Red */
+  color: white;
+  font-size: 0.7rem;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 800;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border: 2px solid #764ba2; /* Blends with background */
+  position: relative;
+  top: -2px;
+}
+
+/* Specific Badge for Admin */
+.admin-badge {
+  background-color: #fbbf24; /* Gold for Admin Alerts */
+  color: #1a202c;
+  border-color: #667eea;
+}
+
+/* --- Logout Button --- */
+.logout-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn:hover {
+  background: #ff4757; /* Turns red on hover to signal logout */
+  border-color: #ff4757;
+  color: white;
+}
+
+/* --- Special Admin Styling --- */
+.admin-access {
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .navbar-logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+    gap: 5px;
+  }
+
+  .nav-link {
+    width: calc(50% - 10px); /* Two links per row on mobile */
+    justify-content: center;
+  }
+}

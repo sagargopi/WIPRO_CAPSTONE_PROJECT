@@ -1,0 +1,339 @@
+/* --- Admin Chat Page Wrapper --- */
+.admin-chat-page-wrapper {
+  height: calc(100vh - 100px); /* Adjust based on your Navbar height */
+  padding: 20px;
+  background-color: #f0f2f5;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* --- Main Layout Container --- */
+.admin-chat-container {
+  display: flex;
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SIDEBAR: Conversations List --- */
+.chat-sidebar {
+  width: 350px;
+  border-right: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #673ab7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.total-unread-badge {
+  background: #ff4757;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.conversation-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conv-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.conv-item:hover {
+  background: #f8f9ff;
+}
+
+.conv-item.active {
+  background: #f0ebff;
+  border-left: 5px solid #673ab7;
+}
+
+.conv-avatar {
+  width: 45px;
+  height: 45px;
+  background: #f3e5f5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.conv-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.conv-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.conv-name {
+  font-weight: 700;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.unread-dot-indicator {
+  width: 100%;
+  height: 10px;
+  width: 10px;
+  background: #ff4757;
+  border-radius: 50%;
+}
+
+.conv-preview {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- MAIN CHAT WINDOW --- */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9fb;
+}
+
+.chat-window-header {
+  padding: 15px 25px;
+  background: white;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.user-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.online-status {
+  font-size: 0.75rem;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* --- MESSAGE BUBBLES (Matching Customer Style) --- */
+.msg-group {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Admin (You) -> Sent to the right */
+.msg-group.sent {
+  align-self: flex-end;
+}
+
+/* Customer -> Received on the left */
+.msg-group.received {
+  align-self: flex-start;
+}
+
+.msg-bubble {
+  padding: 12px 18px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sent .msg-bubble {
+  background: #673ab7;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.received .msg-bubble {
+  background: white;
+  color: #333;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+.msg-subject-tag {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #673ab7;
+}
+
+.msg-meta {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.sent .msg-meta {
+  text-align: right;
+}
+
+/* --- INPUT AREA --- */
+.chat-input-area {
+  padding: 20px 25px;
+  background: white;
+  border-top: 1px solid #edf2f7;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.admin-message-input {
+  flex: 1;
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: none;
+  height: 45px;
+  transition: border-color 0.2s;
+}
+
+.admin-message-input:focus {
+  outline: none;
+  border-color: #673ab7;
+  background: #fcfaff;
+}
+
+.btn-send-admin {
+  background: #673ab7;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  height: 45px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-send-admin:hover {
+  background: #5e35b1;
+  transform: translateY(-2px);
+}
+
+.btn-send-admin:active {
+  transform: translateY(0);
+}
+
+/* --- Empty States & Alerts --- */
+.no-selection-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a0aec0;
+}
+
+.no-selection-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  opacity: 0.3;
+}
+
+.empty-notice {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+/* Alert Styles */
+.alert {
+  margin: 10px 20px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.alert-error {
+  background: #fff5f5;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+.alert-success {
+  background: #f0fff4;
+  color: #2f855a;
+  border: 1px solid #9ae6b4;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex; /* Required */
+  flex-direction: column; /* Required */
+  gap: 15px;
+  background-color: #f9f9fb;
+}
+
+.msg-group {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forces the Admin bubble to the Right */
+.msg-group.sent {
+  align-self: flex-end;
+}
+
+/* Forces the Customer bubble to the Left */
+.msg-group.received {
+  align-self: flex-start;
+}
+
+/* The purple color for Admin messages */
+.sent .msg-bubble {
+  background: #673ab7;
+  color: white;
+  border-bottom-right-radius: 4px;
+}

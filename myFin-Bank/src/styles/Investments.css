@@ -1,0 +1,210 @@
+/* --- Full Width Page Wrapper --- */
+.investments-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.investments-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 50px 20px;
+}
+
+/* --- Header & Glass Stats --- */
+.investments-header h1 {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.investment-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white; /* Solid for high contrast as requested */
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.stat-card p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #718096;
+  margin: 0 0 10px 0;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: block;
+}
+
+.stat-card.balance .stat-value { color: #10b981; }
+.stat-card.invested .stat-value { color: #7c3aed; }
+.stat-card.returns .stat-value { color: #3b82f6; }
+
+/* --- Form Card Upgrade --- */
+.investment-form-card {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  color: #1a202c;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.investment-form-card h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #4c1d95;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 15px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #718096;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #7c3aed;
+  background: #f5f3ff;
+  outline: none;
+}
+
+.disabled-input { background: #f8fafc; color: #a0aec0; cursor: not-allowed; }
+
+.preview-box {
+  background: #f0fdf4;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px dashed #10b981;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.preview-item p { font-size: 0.75rem; font-weight: 700; color: #065f46; margin: 0; text-transform: uppercase; }
+.preview-item strong { font-size: 1.3rem; color: #047857; display: block; margin-top: 5px; }
+
+/* --- Portfolio Grid --- */
+.investments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.inv-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-top: 6px solid #7c3aed;
+  transition: transform 0.3s;
+}
+
+.inv-card:hover { transform: scale(1.03); }
+
+.inv-type-label { font-weight: 800; color: #7c3aed; font-size: 0.8rem; text-transform: uppercase; }
+.inv-amount { font-size: 1.8rem; font-weight: 900; color: #1a202c; margin: 15px 0; }
+.inv-meta { display: flex; justify-content: space-between; font-weight: 600; color: #718096; }
+
+/* --- Buttons --- */
+.btn-primary-action {
+  background: white;
+  color: #7c3aed;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-success-solid {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-mature {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* --- Educational Cards --- */
+.educational-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.edu-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border-left: 8px solid #7c3aed;
+  color: #333;
+}
+
+.rate-text { font-weight: 800; color: #059669; font-size: 1.1rem; }
+.empty-state-card { text-align: center; color: white; padding: 40px; opacity: 0.8; }

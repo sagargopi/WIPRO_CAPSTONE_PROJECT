@@ -1,0 +1,23 @@
+.admin-notif-container { padding: 30px; max-width: 900px; margin: auto; }
+.notif-list { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+
+.notif-item {
+  display: flex; gap: 20px; padding: 20px;
+  background: white; border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-left: 6px solid #ccc;
+}
+
+/* Red for Zero Balance alerts */
+.notif-item.balance_alert { border-left-color: #ff4d4d; background: #fff5f5; }
+.notif-item.balance_alert .badge { background: #ff4d4d; color: white; }
+
+/* Blue for Loan Applications */
+.notif-item.loan_status { border-left-color: #3498db; background: #f0f7ff; }
+.notif-item.loan_status .badge { background: #3498db; color: white; }
+
+.notif-meta { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+.timestamp { font-size: 0.85rem; color: #777; }
+.message { font-size: 1.05rem; color: #333; margin: 0; }
+.btn-action { margin-top: 12px; padding: 6px 12px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer; }

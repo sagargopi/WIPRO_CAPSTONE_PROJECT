@@ -1,0 +1,384 @@
+/* --- Core Container --- */
+.loan-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2d3748;
+}
+
+/* --- Header Section --- */
+.loan-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.loan-header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.loan-info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    text-align: center;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #4c51bf; /* MyFin Purple */
+    margin-top: 5px !important;
+}
+
+/* --- Actions & Filters Bar --- */
+.loan-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-filter-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input, .category-select {
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input:focus, .category-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* --- Application Form Card --- */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    animation: fadeInDown 0.4s ease-out;
+}
+
+.form-title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.disabled-input {
+    background-color: #f7fafc;
+    color: #718096;
+    font-weight: bold;
+}
+
+/* --- EMI Result Box --- */
+.emi-result-box {
+    margin-top: 25px;
+    background: #ebf4ff;
+    border-left: 5px solid #4c51bf;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+
+.emi-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #5a67d8;
+}
+
+.emi-item strong {
+    font-size: 1.4rem;
+    color: #2c5282;
+}
+
+/* --- Loans History Grid --- */
+.loans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding-top: 20px;
+}
+
+.loan-card-item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-top: 5px solid #cbd5e0; /* Default Border */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loan-card-item.cat-home { border-top-color: #48bb78; }      /* Green */
+.loan-card-item.cat-personal { border-top-color: #4299e1; }  /* Blue */
+.loan-card-item.cat-education { border-top-color: #ed64a6; } /* Pink */
+.loan-card-item.cat-vehicle { border-top-color: #ecc94b; }   /* Yellow */
+
+.loan-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.cat-icon {
+    font-size: 1.2rem;
+    background: #f7fafc;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.category-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    letter-spacing: -0.025em;
+}
+
+.main-amt {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin: 15px 0;
+}
+
+/* Fix for the "TenureM" overlapping in your screenshot */
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.stat span {
+    color: #718096;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+}
+
+.stat strong {
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.loan-id {
+    font-size: 0.75rem;
+    color: #a0aec0;
+    font-weight: bold;
+}
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.status-pill.pending { background: #fffaf0; color: #9c4221; }
+.status-pill.approved { background: #f0fff4; color: #22543d; }
+.status-pill.rejected { background: #fff5f5; color: #822727; }
+
+.card-mid h4 {
+    margin: 0;
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.main-amt {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 10px 0;
+}
+
+.card-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #edf2f7;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.stat span {
+    display: block;
+    font-size: 0.7rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+.stat strong {
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+/* --- Success/Error Alerts --- */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.alert-error { background: #fed7d7; color: #9b2c2c; }
+.alert-success { background: #c6f6d5; color: #22543d; }
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce-in {
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* --- New Premium Background --- */
+.loan-page-bg {
+    min-height: 100vh;
+    width: 100%;
+    /* Gradient matching your MyFin purple theme */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.loan-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Upgraded Header Text --- */
+.loan-header h1 {
+    color: #ffffff;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    /* Subtle glow effect for the title */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Upgrades (To look good on purple) --- */
+.info-card {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.application-history-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Loan Card Item Upgrade --- */
+.loan-card-item {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.loan-card-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Action Buttons --- */
+.btn-primary {
+    background: white !important;
+    color: #667eea !important;
+    font-weight: 700 !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: #f8f9fa !important;
+    transform: translateY(-2px);
+}
